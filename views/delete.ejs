@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Family Member</title>
+</head>
+
+<body>
+  <h1>Delete a Family Member</h1>
+
+  <!-- Change the method to POST -->
+<form action="/delete" method="POST">
+  <label for="user_to_delete">Select Family Member to Delete:</label>
+  <select name="user" id="user_to_delete">
+    <% users.forEach(function(user) { %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% }); %>
+  </select>
+  <button type="submit" name="delete" value="true">Delete</button>
+</form>
+
+  <br>
+  <a href="/">Back to Main Page</a>
+</body>
+
+</html> 
